@@ -23,53 +23,53 @@ An an IT support role, you might interact with the BIOS more often than you thin
 
 > PUTTING IT ALL TOGETHER* 
 Now that we've learned what the computer components are and how they work we're going to assemble our very own computer, a full size desktop. Computers are incredibly fundamental to the work of an IT support specialist. There used in pretty much every aspect of the job. Aside from work, knowing how to build a computer might inspire you to try all kinds of cool stuff. You could custom build a gaming rig to play the most advanced game at the highest setting or like me make a home media server for all you photos and videos. Knowing how to build a computer is a skill that can be useful in lots of interesting ways. Before we get started, let's lay down some ground rules for this ground up build, sorry, I cannot help myself. We should think about electrostatic discharge and try to prevent unwanted static from harming our very expensive components. Have you ever rubbed yourself socks on a carpet and then accidentally zap someone? That's pretty harmless, but if you that to your new motherboard, you completely destroy it. So how do we prevent static discharge? We can go about this in two ways, we can touch in our two device that's plugged in but not powered on. FYI, you should do this every couple of minutes when assembling a new computer. Another option is to wear an anti-static wristband like the one I have here, let me get it.
-Play video starting at :1:34 and follow transcript1:34
+
 You connect the end of the clip to a non-painted metal surface like your computer. And then you separate on to your hands and voila your done. While we are on the subject of anti-static safety, I want to call out that when you buy computer parts, they'll come in anti-static bags to prevent accidental static electricity. Be sure to keep them inside the bags until you need to install them on your computer. Now, let's get making this computer, we'll start by laying down the foundation of our computer, the motherboard. Remember, there are lots of different form factors for motherboards and you want to make sure the one you purchase fits your computer case. We purchased the full size desktop cased and have a full size ATX motherboard. On the motherboard there are a lot of screw holes which coincide with the holes in the desktop case too. You want to match up the holes on the motherboard to the holes on the desktop.
-Play video starting at :2:33 and follow transcript2:33
+
 Once you figure out which holes to use screw in standoffs. Standoffs are used to raise and attach your motherboard to the case. In this instance our case has built in standoffs. Let's start start adding on components.
-Play video starting at :3:38 and follow transcript3:38
+
 Let's start by adding our components in. We'll start with the CPU, so let's take that out of our anti-static bag.
-Play video starting at :3:45 and follow transcript3:45
+
 You want to be very careful with these because they're very expensive, and you don't want to drop them.
-Play video starting at :3:54 and follow transcript3:54
+
 Once we've taken out the bag, let's line up the CPU with the motherboard's socket. Something to note is this marker right here. This has to align with the CPU socket on the motherboard. Also don't forget to make sure you get compatible CPU that fit your motherboard. We have a LGA CPU and an LGA-compatible motherboard socket. So let's go ahead and align the correct orientation of the CPU and secure it in place like this.
-Play video starting at :4:24 and follow transcript4:24
+
 So like mentioned before, you want to make sure that the pointers on the CPU and the socket are aligned.
-Play video starting at :4:32 and follow transcript4:32
+
 The easy part is putting the CPU in. The fun part is securing this, just note that when you secure the CPU in the socket you do need to use a bit of force so it's tightly secured in.
-Play video starting at :4:47 and follow transcript4:47
+
 Perfect, so now the CPU is secured in the socket. Now that our CPU is in place we need to add our heat sink on top of it. The heat sink is used to dissipate heat from our CPU. I want to show you some cool things. This part right here, this is what our CPU relies on to stay cool. It takes the heat from there and then uses this fan to blow it out.
-Play video starting at :5:15 and follow transcript5:15
+
 Before we attach the heat sink, we need to apply an even amount of thermal paste. Let me get that, this is the thermal paste. Thermal paste is used to better connect our CPU and heat sink. So the heat transfers from to the other better.
-Play video starting at :5:33 and follow transcript5:33
+
 To get started, apply a dab of thermal paste and spread evenly with a flat object. Lets do that on our CPU right here.
-Play video starting at :5:43 and follow transcript5:43
+
 So first thing that you want to do is slowly apply a slight dab on the CPU like so. Then with the flat object, apply the thermal paste evenly throughout your CPU to go half way right here, half way right here,
-Play video starting at :6:9 and follow transcript6:09
+
 Half way right here, and then half way right here.
-Play video starting at :6:16 and follow transcript6:16
+
 Just make sure that it spread evenly throughout the CPU. You may have to do this multiple times to get this correct.
-Play video starting at :6:27 and follow transcript6:27
+
 Okay, so once you have that in place, you're going to take your heat sink and then you're going to press it against the CPU.
-Play video starting at :6:37 and follow transcript6:37
+
 And something to note is that these screws right here, they align with the CPU socket. So that can guide you while you put the heat sink on.
-Play video starting at :7:2 and follow transcript7:02
+
 Great, once you have all four sockets aligned, go ahead and get your screw driver and then tighten down the sockets.
-Play video starting at :7:16 and follow transcript7:16
+
 So one thing to do, is to make sure that you screw the opposite sides first so you know that the heat sink is attached securely.
-Play video starting at :7:37 and follow transcript7:37
+
 So one thing I like to do again is just kind of go over my screws to make sure everything is tightened securely.
-Play video starting at :7:59 and follow transcript7:59
+
 Great, now that our screws are tightly on in our heat sink secured to the CPU You have to plug this Molex to the motherboard. This is important because this is what controls the fan speed via the motherboard.
-Play video starting at :8:18 and follow transcript8:18
+
 Perfect. So now, you've fully installed and connected your CPU to the motherboard.
-Play video starting at :8:26 and follow transcript8:26
+
 Next, let's install our RAM. Located DIMM slots on your motherboard. So, these are the DIMM slots like we discussed before. I have four slots available here and I have four RAM sticks. Let me pick those up.
-Play video starting at :8:39 and follow transcript8:39
+
 These are my RAM sticks, and of course, they're in my anti-static bag Let's take them out.
-Play video starting at :9: and follow transcript9:00
+
 So, as I mentioned before, this build, we're going to use DDR3 RAM.
-Play video starting at :9:6 and follow transcript9:06
+
 All right, one thing I like to do before I install my RAM is to make sure that I align these slots with my RAM slots so that way I'm not going to be forcing those in when it's time to install. So, if you see right here, your slots are right in the middle so something I do is before I put it in, just visually make sure that you got this right and then align the rest of your RAM sticks to the same position like this. You just want to go like this.
 Play video starting at :9:34 and follow transcript9:34
 Like this.
