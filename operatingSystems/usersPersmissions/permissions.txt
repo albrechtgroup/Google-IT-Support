@@ -1,0 +1,136 @@
+> WINDOWS: FILE AND PERMISSIONS 
+You might have noticed that we were looking at permissions in the GUI before. There's a check box in the permission list for special permissions. The permissions that we've been looking at and setting so far are called simple permissions. Simple permissions are actually sets of special, or specific permissions.
+Play video starting at ::34 and follow transcript0:34
+For example, when you set the re-permission on a file, you're actually setting multiple special permissions. Let's take a look at the list of special permissions available. I'm going to click on the advanced tab under my permissions setting.
+Play video starting at ::51 and follow transcript0:51
+When I click on a username, and then go to Advanced Permissions, I can see a list of all the special permissions enabled on that file.
+Play video starting at :1:5 and follow transcript1:05
+When we select a basic permission like Read, we're actually enabling the special permissions List folder / read data. Read attributes, read extended attributes, read permissions, and synchronize, which are just fine-tuned permissions. You can modify these permissions like you would any other basic permission.
+Play video starting at :1:27 and follow transcript1:27
+Feel free to read more about the different types of special permissions in the supplemental reading I included after this video.
+Play video starting at :1:34 and follow transcript1:34
+In most cases, the simple permissions are going to be all that you need. But sometimes, you need to create a file or folder that doesn't quite follow a simple pattern. Let's take a look at an example in this CLI. To view special permissions on a file in the CLI, we will simply use the icacls command as before.
+Play video starting at :1:56 and follow transcript1:56
+Let's take a look at a more interesting example than my desktop folder, icacls C:/Windows/Temp. This directory is used to hold temporary files for all users in the system.
+Play video starting at :2:12 and follow transcript2:12
+We would like for everyone in the system to be able to create files and folders here.
+Play video starting at :2:17 and follow transcript2:17
+You might think that we should use modify or full control for this, but we don't want users to be able to delete each others files.
+Play video starting at :2:25 and follow transcript2:25
+Let's take a look at some of the DACLs assigned to this folder and figure out how to do this. First, local administrators and the operating systems computer account have full permissions over this folder, and all files and folders within it. We see a new descriptor, IO, which indicates that this DACL is inherit only. That means that it will be inherited, but it is not applied to this container C:\Windows\Temp. The users group includes all user accounts on the local machine. We're going to let users WD, or create files like data, AD, create folders and append data, and S for synchronize.
+Play video starting at :3:8 and follow transcript3:08
+You can see in the next supplemental reading that these special permissions are included in the modified simple permission.
+Play video starting at :3:15 and follow transcript3:15
+Unlike the modify a simple permission, we are not granting users the ability to delete files or folders. We do want users to be able to delete their own files and folders, though, so how do we do that?
+Play video starting at :3:28 and follow transcript3:28
+So, if you see creator owner, creator owner is a special user that represents the owner of whichever file the DACL applies to. In this directory, and all subdirectories, whoever owns a file or folder has full control of it. Nice, so I'm going to create a folder and file in C:\windows\temp and see what DACLs are applied.
+Play video starting at :4:5 and follow transcript4:05
+Let's use what we learned about output redirection to record the output of the icacls in this file, so icacls.
+Play video starting at :4:16 and follow transcript4:16
+Example for c:/Windows/Temp/example. Then we're going to use our redirector output to give us icacls.txt. Okay, now let's look at the file we created to view the output of icacls.
+Play video starting at :4:39 and follow transcript4:39
+Cool, I created the files, so I have full control of them. And all of the other DACLs that we saw in c:/windows/Temp have been inherited. You can see that using the specials permissions in NTFS DACLs can be complicated, but it can also let you create really powerful sets of permissions customized to your exact needs.
+
+> LINUX: FILE PERMISSIONS 
+As we've now learned, there are files and folders that have different permissions set on them, so that unwanted eyes can't view or modify them. There are 3 different permissions that you can have in Linux; Read, this allows someone to read the contents of a file or folder. Write, this allows someone to write information to a file or folder. And execute, this allows someone to execute a program. Let's take a look at this with the LS command, we'll use the long flags so we can see the permissions on the file. Okay. The first thing we see in this column is -rwxrw-r-- there are 10 bits here. The first one is the file type. In this example, dash means that the file we're looking at is just a regular file. Sometimes you might see D which stands for a directory. The next nine bits are our actual permissions, they're grouped in trios or sets of three. The first trio refers to the permission of the owner of the file. The second trio refers to the permission of the group that this file belongs to. The last trio refers to the permission of all other users. The R stands for readable, W stands for writeable and X stands for executable. Like in binary, if a bit is set then we say that it's enabled. So for our permissions, if a bit is a dash it's disabled. If it has something other than a dash, it's enabled. Permissions in Linux are super flexible and powerful, because they allow us to set specific permissions based on our role. Such as an owner in a group or everyone else. Let's take a look at this in detail. The first set of permissions, rwx, refers to the permission of the user who owns that file. In this case, its Cindy. We can see in the owner field of ls- l. So it says here that the owner of the file can read, write, and execute this file. The next set of permissions are group permissions. We can see the group this file belongs to is the cool group. They have read and write permissions but not execute permissions. And lastly, the permissions for all other users and groups only allow them to read this file. And that's Linux permissions in a nutshell, it might take some time to get used to reading permissions. Don't worry, you'll eventually get the hang of it. As always, feel free to review this lesson again if you need a refresher.
+
+> WINDOWS: MODIFYING PERMISSIONS 
+Now that we can read permissions, let's take it a step further and learn how to change permissions in windows. Let's say we want to give access to another person in my family to view a folder with family pictures on the computer. How do I do that? On my Local Disk C, I have a folder called Vacation Pictures that I want to share with another user on my machine, Devan. To do that, I'm going to right click on this folder and go to Properties, then the Security tab.
+Play video starting at ::47 and follow transcript0:47
+Now I can see an option to Edit file permissions. I'm going to click on that. From here, I can see that I can add a group or usernames to this ACL. I'm going to go ahead and click Add. From here, it asked me to enter the username of the person I want to add on this ACL. I'm going to enter devan and then click Check Names to verify that I typed it in right.
+Play video starting at :1:22 and follow transcript1:22
+After it's been verified, I'm going to click OK. Once devan's added to the ACL, I can click on his username, then check the allow boxes for the permissions I want to give him. Let's give Devan modify access, so you can add pictures to this folder too.
+Play video starting at :1:44 and follow transcript1:44
+That's it. We've kind of been glossing over this other checkbox here Deny. You might have already guess that Deny doesn't allow you to have a certain permission. But it's special because it generally takes precedence over the allow permissions. Let's say Devan is in a group that has access to this folder. If we explicitly check the deny box for Devan's username, even if the group has access to the folder Devan won't. Sorry, Devan. If you want to learn more bout permission precedence, you can check out the supplemental reading. To modify a permission in the CLI, we're going to return to the icacls command. In the examples I'm going to show you, will be running icacls from PowerShell. The icacls command was designed for the command prompt before PowerShell. And its parameters use special characters that confuse PowerShell. By surrounding icacls parameters with single quotes, I'm telling PowerShell not to try and interpret the parameter as code. If you run these commands in command.exe, you'll need to remove the single quotes for them to work. So let's look at this side by side with PowerShell.exe and command.exe. In PowerShell, the command would be icacls 'C:\'Vacation Pictures\' /grant' with single quotes, 'Everyone: (OI)(CI)(R). In command prompt, the command would be icacls with double quotes "C\Vacation Pictures"/grant Everyone:(IO)(CI)(R). We're going to see with this command does in just a moment. For now, let's take a look at the difference in the quotes. In the PowerShell example, we add single quotes to make PowerShell ignore the parentheses and because there's a space in the path. In the command.exe example, we have to use double quotes for the path. And we don't need the single quotes anymore to hide the parentheses. Got it?Great. Now, let's take a look at the permissions that we just gave to Devan with icacls. Cool. I see there's a new decal attach to the vacation pictures directory for Devan, that gives him modify access. We can see that any new files or folders that get created in vacation pictures will be inherited. So let's say we want anyone with permission to use this computer to be able to see these pictures. We don't want them to add or remove photos though. What permissions do we want to give them? That's right. We want to give them read permission to the Vacation's Picture folder. Let's use the special group Everyone to give read permissions to the directory. So icacls 'C:\ Vacation Pictures' /grant Everyone:(OI)(CI)(R). Success. The Everyone group includes, well, Everyone and includes local user accounts like Cindy and Devan. Guest users: This is a special type of user that's allowed to use the computer without a password. Guest users are disabled by default. You might enable them in very specific situations. Now anyone who can use this computer can browse the photos that Devan and I have put together. Actually, maybe I didn't really want everyone to look at my vacation photos. Maybe I just want the people that have passwords on the computer to be able to see them. In that case, I want to use authenticated users group. That group doesn't include guest users. So first, let's add a new DACL. icacls 'C:\Vacation Pictures' /grant' Authenticated Users:(OI)(CI)(R). Success. Now, let's remove the permissions for the Everyone group. icacls 'C:\Vaction Pictures' /remove Everyone. Success. Now, let's use icacls to verify that the permissions are set away we intended. icacls 'C:\Vacation Pictures'. Sweet. We can see the Authenticated Users were added and Everyone is removed. Next, let's take a look at modifying permissions in Linux.
+
+> LINUX: MODIFYING PERMISSIONS 
+In Linux, we change permissions using the chmod, or change mode, command. First, pick which permission set you want to change. The owner, which is denoted by u, the group the file belongs to, which is denoted by a g, or other users, which is noted by an o. To add or remove permissions, just use a plus or minus symbol that indicate who the permission affects. Let's take a look at some examples.
+Play video starting at ::41 and follow transcript0:41
+So that's chmod u+x my_cool_file.
+Play video starting at ::52 and follow transcript0:52
+This command is saying that we want to change the permission of my_cool_file by giving executable or x access to the owner or u. You can do the same thing if you wanted to remove a permission. So, chmod u-x my_cool_file.
+Play video starting at :1:17 and follow transcript1:17
+Instead of a plus, we just minus. Pretty simple, right?
+Play video starting at :1:21 and follow transcript1:21
+If you wanted to add multiple permissions to a file, you could just do something like this.
+Play video starting at :1:41 and follow transcript1:41
+This is saying we want to add read and execute permissions for the owner of my_cool_file. And you can do the same for multiple permission sets. You do chmod ugo+r my_cool_file.
+Play video starting at :1:59 and follow transcript1:59
+Now, this says we want to add read permissions for our owner, the group the file belongs to, and all other users and groups. This format of using rwx and ugo to denote permissions and users in chmod is known as symbolic format. We can also change permissions numerically, which is much faster and simpler, and lets us change all permissions at once.
+Play video starting at :2:19 and follow transcript2:19
+The numerical equivalent of rwx is 4 for read or r, 2 for write or w, and 1 for execute or x. To set permissions, we add these numbers for every permission set we want to affect. Let's take a look at an example.
+Play video starting at :2:45 and follow transcript2:45
+The first number 7, is our owner's permission. The second number, 5, is our group permissions, and the third number, 4, is the permission for all other users.
+Play video starting at :2:55 and follow transcript2:55
+Wait a minute, where are we getting 5 and 7? Remember, you have to add the permissions together. If you add 4, 2, and 1 together, you get rwx, which equals 7. So our owner permission is able to read, write and execute this file. Can you guess what 5 would stand for? That's right? 4 plus 1 is read and execute. So now, you can see how numeric format is quicker than symbolic format. Instead of running something like this,
+Play video starting at :3:39 and follow transcript3:39
+We can run chmod 754 my_cool_file to update them all.
+Play video starting at :3:50 and follow transcript3:50
+Either way, you can change permissions using the symbolic or numerical format. Just pick whichever is easiest for you.
+Play video starting at :3:56 and follow transcript3:56
+You can also the owner and the group of a file. The chown or change owner command allows you to change the owner of a file.
+Play video starting at :4:4 and follow transcript4:04
+Let's go ahead and change the owner to Devan.
+Play video starting at :4:14 and follow transcript4:14
+Awesome. And Devan is the owner of this file.
+Play video starting at :4:17 and follow transcript4:17
+And to change the group of file belongs to, you can use a chgrp or change group command.
+Play video starting at :4:36 and follow transcript4:36
+Awesome. Now, the best group ever is the group owner for this file.
+Play video starting at :4:42 and follow transcript4:42
+It may take a while for you to get the hang of reading and changing permissions. You can practice changing the permissions on a few files until you get it down. Permissions are an essential building block to computer security, and you'll be using it throughout your work as an IT Support Specialist.
+
+> WINDOWS: SPECIAL PERMISSIONS 
+You might have noticed that we were looking at permissions in the GUI before. There's a check box in the permission list for special permissions. The permissions that we've been looking at and setting so far are called simple permissions. Simple permissions are actually sets of special, or specific permissions.
+Play video starting at ::34 and follow transcript0:34
+For example, when you set the re-permission on a file, you're actually setting multiple special permissions. Let's take a look at the list of special permissions available. I'm going to click on the advanced tab under my permissions setting.
+Play video starting at ::51 and follow transcript0:51
+When I click on a username, and then go to Advanced Permissions, I can see a list of all the special permissions enabled on that file.
+Play video starting at :1:5 and follow transcript1:05
+When we select a basic permission like Read, we're actually enabling the special permissions List folder / read data. Read attributes, read extended attributes, read permissions, and synchronize, which are just fine-tuned permissions. You can modify these permissions like you would any other basic permission.
+Play video starting at :1:27 and follow transcript1:27
+Feel free to read more about the different types of special permissions in the supplemental reading I included after this video.
+Play video starting at :1:34 and follow transcript1:34
+In most cases, the simple permissions are going to be all that you need. But sometimes, you need to create a file or folder that doesn't quite follow a simple pattern. Let's take a look at an example in this CLI. To view special permissions on a file in the CLI, we will simply use the icacls command as before.
+Play video starting at :1:56 and follow transcript1:56
+Let's take a look at a more interesting example than my desktop folder, icacls C:/Windows/Temp. This directory is used to hold temporary files for all users in the system.
+Play video starting at :2:12 and follow transcript2:12
+We would like for everyone in the system to be able to create files and folders here.
+Play video starting at :2:17 and follow transcript2:17
+You might think that we should use modify or full control for this, but we don't want users to be able to delete each others files.
+Play video starting at :2:25 and follow transcript2:25
+Let's take a look at some of the DACLs assigned to this folder and figure out how to do this. First, local administrators and the operating systems computer account have full permissions over this folder, and all files and folders within it. We see a new descriptor, IO, which indicates that this DACL is inherit only. That means that it will be inherited, but it is not applied to this container C:\Windows\Temp. The users group includes all user accounts on the local machine. We're going to let users WD, or create files like data, AD, create folders and append data, and S for synchronize.
+Play video starting at :3:8 and follow transcript3:08
+You can see in the next supplemental reading that these special permissions are included in the modified simple permission.
+Play video starting at :3:15 and follow transcript3:15
+Unlike the modify a simple permission, we are not granting users the ability to delete files or folders. We do want users to be able to delete their own files and folders, though, so how do we do that?
+Play video starting at :3:28 and follow transcript3:28
+So, if you see creator owner, creator owner is a special user that represents the owner of whichever file the DACL applies to. In this directory, and all subdirectories, whoever owns a file or folder has full control of it. Nice, so I'm going to create a folder and file in C:\windows\temp and see what DACLs are applied.
+Play video starting at :4:5 and follow transcript4:05
+Let's use what we learned about output redirection to record the output of the icacls in this file, so icacls.
+Play video starting at :4:16 and follow transcript4:16
+Example for c:/Windows/Temp/example. Then we're going to use our redirector output to give us icacls.txt. Okay, now let's look at the file we created to view the output of icacls.
+Play video starting at :4:39 and follow transcript4:39
+Cool, I created the files, so I have full control of them. And all of the other DACLs that we saw in c:/windows/Temp have been inherited. You can see that using the specials permissions in NTFS DACLs can be complicated, but it can also let you create really powerful sets of permissions customized to your exact needs.
+
+> LINUX: SetUID, SetGID, STICKY BIT 
+At Linux, we also have special permissions. What if I want a user to be able to do something that requires root privileges, but I don't want to give them these privileges? What's the use case for this? Glad you asked. There are certain commands that need to change files that are owned by root. Normally, if you need to change a file owned by root, you'd have to use sudo. But we want it to be able to have normal users change the files without giving them root access. Let's check out an example. Let's say I want to change my password. I would use a password command like we've learned.
+Play video starting at ::58 and follow transcript0:58
+Pretty simple, right? Now I just enter in my new password and my password is changed. We know that the password command secretly scrambles up our passwords then add them to this etc shadow file. Let's dive a little deeper into this file.
+Play video starting at :1:19 and follow transcript1:19
+Oh, it says this file's owned by root. How are we able to write or scramble passwords in this file, it's owned by root. Well, thanks to a special permission bit known as setuid we can enable files to be run by the permission of the owner of the file. In this case, when you run the password command, it's being run as root. Let's verify this.
+Play video starting at :1:44 and follow transcript1:44
+We see the permissions on this file look a little odd. There's an S here where the x should be. The s stands for setuid. When the s is substituted where irregular bit would be, it allows us to run the file with the permissions of the owner of the file. To enable the setuid bit, you can do it symbolically or numerically.
+Play video starting at :2:11 and follow transcript2:11
+The symbolic format uses an s while the numerical format uses a 4, which you prepend to the rest of the permissions like this.
+Play video starting at :2:41 and follow transcript2:41
+Similar to setuid, you can run a file using group permissions with setgid or set group ID. This allows you to run a file as a member of the file group.
+Play video starting at :2:58 and follow transcript2:58
+Under our group permissions, we can see that the setgid bit was enabled, meaning that when this program is run, it's run as group tty. To enable the setgid bit, you can do something similar to setuid. The only difference is the numerical format uses a two. So, I can do something like this or something like this.
+Play video starting at :3:33 and follow transcript3:33
+There's one last special permission bit we should cover and that's the sticky bit. This bit sticks a file or folder down. It makes it so anyone can write to a file or folder, but they can't actually delete anything. Only the owner of root can delete anything. Let's look at permissions for slash tmp directory or a lot of programs write temporary files to and you'll see what I mean.
+Play video starting at :4:3 and follow transcript4:03
+I added the d flag to show information just for the directory and not the contents. But as you can see, there's a special permission but at the end here t, this means everyone can add and modify files in the slash tmp directory, but only root or the owner can delete the slash tmp directory. You can also enable the sticky bit using a numerical or symbolic format. The symbolic bit is a t and the numerical bit is a one. So, sudo chmod plus t my folder or sudo chmod 175 my folder. Works. So let's verify.
+Play video starting at :4:55 and follow transcript4:55
+That was a lot of information on special bits. You usually won't have to deal with these permission bits in a practical day-to-day manner but it's important to know they exist in case you ever want to allow users to either share folders or even run commands with escalated privileges. User access, group access, passwords, and permissions are all core concepts in security. Right now, you're only working with permissions and access on a single computer scale. Eventually, you'll learn about access on multi-user levels across different networks and more in the next course on system administration and IT infrastructure services. For now, congratulations, you've just taken your first step toward building a foundation of computer security knowledge. In the next module, we're going to switch gears and talk about our OS and how it manages software. Next, we've got two assessments for you covering Windows and bash permissions. Once you've finished, you're granted permission to take a break before we hit the ground running in the next module.
+
