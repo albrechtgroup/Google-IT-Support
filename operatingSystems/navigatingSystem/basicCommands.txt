@@ -174,4 +174,3 @@ Play video starting at :1: and follow transcript1:00
 So rm -r, let's remove the misc_folder directory.
 Play video starting at :1:7 and follow transcript1:07
 And if we check the misc folder is now gone. Remember, when using rm command, take extra precaution that you aren't removing something important by accident.
-
