@@ -1,0 +1,99 @@
+> MODULE INTRODUCTION 
+Welcome back. In the last module, we learned about the physical infrastructure and network services that are used in an IT organization. In this lesson, we're going to discuss the other services that make up an IT infrastructure. The software and the platform services.
+Play video starting at ::28 and follow transcript0:28
+Software services are the services that employees use that allow them to do their daily job functions. This can include applications like word processors, Internet browsers, email clients, chat clients and so on. Platform services provide a platform for developers to code, build and manage software applications. This way, developers don't have to deal with operating system maintenance and other services that are needed to use for the platform tools.
+Play video starting at ::55 and follow transcript0:55
+When managing IT infrastructure, it's important that you implement software services for your users to enable their productivity. Depending on what type of company you might manage, you may also need to manage platform services for software developers.
+
+> CONFIGURING COMMUNICATION SERVICES 
+Software services include a wide range of functions. We'll cover the major ones here.
+Play video starting at ::18 and follow transcript0:18
+First up is communication services, which enable employees in a company to talk to one another. Then, the security services, which add a layer of security protection to our IT infrastructure.
+Play video starting at ::29 and follow transcript0:29
+We'll also discuss user productivity services and some of the aspects of managing software in a business that you'll probably have to think about in your work.
+Play video starting at ::38 and follow transcript0:38
+There's lots of software out there that's used for inter-company communication, like email or phone communication.
+Play video starting at ::44 and follow transcript0:44
+These are important communication services, but in this video we're only going to discuss software that's used in instant communication.
+Play video starting at ::52 and follow transcript0:52
+Instant communication has drastically changed how we communicate in both our personal lives and in the workplace. We can have multiple conversations with different people in real time using chat applications. You probably use something like Facebook Messenger on your smartphones to chat with your friends. In a business setting, there are similar methods of instant communication.
+Play video starting at :1:11 and follow transcript1:11
+The first is Internet Channel Relay or IRC, which is a protocol that's used for chat messages. IRC operates in a client and server model, so lots of IRC client software can be used to connect to an IRC server.
+Play video starting at :1:25 and follow transcript1:25
+IRC was widely used in the 1990s as a way to facilitate all kinds of chats, group chats, individual chats, and more. It's not as widely used today, given the wave of social media instant chat messages. But if you're considering setting up an IRC, it is a free alternative to other chat applications.
+Play video starting at :1:43 and follow transcript1:43
+Paid for options are another method of instant communication. There are a lot more sophisticated and advanced chat applications out there that offer Enterprise support. A few popular options are HipChat and Slack. You can read more about these in the supplemental reading.
+Play video starting at :1:59 and follow transcript1:59
+There are also other communication protocols called open IM protocols that are widely used and integrated into different communication applications. One of the most popular communication protocols is XMPP or Extensible Messaging and Presence Protocol. It's an open source protocol used in instant messaging applications and social networking services. XMPP is even used in Internet of Things applications, among other things.
+Play video starting at :2:26 and follow transcript2:26
+A few popular and free applications that use XMPP are Pidgin and Adium. Feel free to check out more about these alternatives in the supplemental reading right after this video.
+Play video starting at :2:38 and follow transcript2:38
+Instant communications is a fantastic tool you can use to promote team collaboration and efficiency.
+Play video starting at :2:44 and follow transcript2:44
+When managing an IT infrastructure, it should be one of the communication services that you consider implementing for your organization. They'll definitely thank you, maybe even over instant communication.
+
+> CONFIGURING EMAIL SERVICES 
+One communication service that you're almost guaranteed to use today is email.
+Play video starting at ::17 and follow transcript0:17
+We use email for a wide range of communication.
+Play video starting at ::20 and follow transcript0:20
+In an enterprise setting, it's important for a sysadmin, or a sole IT support specialist, to be able to configure email services for the company. To do this, you need to have a domain name set up for your company that you can use as your email domain, like devan@example.com. When you send or receive email, you want to use this email address.
+Play video starting at ::42 and follow transcript0:42
+There are two ways to set up email for a company. The first is to run your own managed server. Using this option, you set up the email service software on a server, then you create a DNS record for your mail server.
+Play video starting at ::56 and follow transcript0:56
+There are different DNS records. Remember that the A record is used for hostnames, but for email servers we use MX, for the mail exchange record.
+Play video starting at :1:6 and follow transcript1:06
+Email server setup can be one of the most complicated service to setup for a sysadmin.
+Play video starting at :1:12 and follow transcript1:12
+You have to get the email to actually work, protect your email addresses from spam, filter out viruses and more.
+Play video starting at :1:19 and follow transcript1:19
+If you'd like to learn more about setting up an email server, check out the next reading. An alternative approach to setting up your own email service is to use an email service provider, like Google Suite.
+Play video starting at :1:32 and follow transcript1:32
+These service providers allow you to create email inboxes and more by paying a monthly fee for every user in your organization.
+Play video starting at :1:40 and follow transcript1:40
+This ties you into the Gmail webmail client, and allows you to access your email from anywhere, as long as you're connected to the Internet.
+Play video starting at :1:47 and follow transcript1:47
+Whatever option you choose, you'll have to understand the differences between email protocols when you setup your email accounts.
+Play video starting at :1:55 and follow transcript1:55
+There are lots of email protocols out there, but we'll only do a rundown of the more common ones you'll hear about, POP3, IMAP, and SMTP.
+Play video starting at :2:4 and follow transcript2:04
+Post Office Protocol, or POP version 3, is an email protocol that downloads email from an email server onto your local device. It then deletes the email from the email server. If you want to retrieve your email through POP3, you can only view it from one device.
+Play video starting at :2:22 and follow transcript2:22
+There are a few reasons why you might want to use POP3 to get your email. If you need to keep your email storage under a certain quota, POP3 is a good way to maintain that storage limitation.
+Play video starting at :2:33 and follow transcript2:33
+Another benefit of POP3 is privacy. Your email can only be seen from your local device. If storage limitations and security are a concern for you, you might want to consider using POP3 over something like IMAP.
+Play video starting at :2:47 and follow transcript2:47
+Speaking of IMAP, or internet message access protocol, allows you to download emails from your email server onto multiple devices. It keeps your messages on the email server. This email protocol is one of the more popular ways to retrieve email. Last up is simple mail transfer protocol, or SMTP, which is a protocol used for sending emails. While POP3 and IMAP and other protocols can be used to retrieve email, there's only really one email protocol for sending email, SMTP.
+Play video starting at :3:22 and follow transcript3:22
+So there are lots of different email protocols that can be implemented, depending on the email software of you choose. You can read more about them in the supplemental reading. Email service is critical for any organization. Companies needs to be able to contact clients and business partners and communicate internally. If you work in an IT support specialist role, where you're handling system administration tasks, you will need to weigh the pros and cons of a dedicated email server or a cloud email service, decisions, decisions, decisions.
+
+> CONFIGURING USER PRODUCTIVITY SERVICES 
+In any organization the software that employees need to do their job is the software that an IT support specialist managing IT infrastructure needs to provide. Depending on the organization, you might need to get your users things like software development programs, word processing, graphical editors, finance software, and so on. Whatever software you provide, there are different things to consider when using it in a commercial setting that might not have crossed your mind when you've used a similar software personally. Remember when we discussed software licensing in an earlier lesson? When you use software, you're doing so under the agreement of the developer's license. For example, when you use open source software, the license agreement usually says that it's free to use, share, and modify. When software is used as a consumer, agreements can say that only a specific person can use the software.
+Play video starting at :1:4 and follow transcript1:04
+In a business or commercial setting, most software distributors will have a separate agreement. In most cases, you can buy ten licenses, and any ten people in your company can use it.
+Play video starting at :1:16 and follow transcript1:16
+If someone leaves the company or doesn't need the software anymore, you can take their license and give it to someone else in the company.
+Play video starting at :1:24 and follow transcript1:24
+When considering software licenses, it's important to review the terms and agreement, then move forward with whatever option works best for your company.
+Play video starting at :1:33 and follow transcript1:33
+Things get a little more complicated when it comes to cloud software services.
+Play video starting at :1:38 and follow transcript1:38
+You might have to deal with some of the same stipulations and also think through whether to purchase added features for businesses and enterprises, like dedicated customer support. Whatever method you use to provide software, whether it's installing software on every machine or utilizing cloud software services, there's one thing to keep in mind. Software used as a consumer won't be the same as software used as a business.
+
+> CONFIGURING SECURITY SERVICES 
+The last software services that we'll discuss are security services.
+Play video starting at ::16 and follow transcript0:16
+Security is super important to all organizations. It's integrated into pretty much all aspects of an IT infrastructure service. We'll dive deeper into this in the last course on IT security. For now, remember that there are lots of different security protocols that are put in place for all sorts of things, keeping data encrypted, authentication, etc. If you ever manage a web server that serves content to other users, you want to let them know that when they access your website, you're keeping their interaction with you as secure as possible. Let's say that you have an online bank account that you're logging into. The URL will most likely begin with an HTTPS. Remember that HTTP stands for HyperText Transfer Protocol, which is used to format and transfer web content around the Internet. When you enter in a URL, you notice that HTTP comes before everything else. HTTPS, or Hypertext Transfer Protocol Secure is a secure version of HTTP. It makes sure the communication your web browser has with the website is secured through encryption. HTTPS is also referred to as HTTP over TLS or HTTP over SSL. This is because there are two protocols that enables us to make our web servers secure. The first is Transport Layer Security protocol, or TLS, which is the most popular way to keep communications secure over a network.
+Play video starting at :1:52 and follow transcript1:52
+TLS is widely used to keep web browsing secure, but it can be used in a lot of other applications, too.
+Play video starting at :2: and follow transcript2:00
+We'll do a deep dive into the technical details of TLS in a later course. The second protocol is Secure Socket Layer protocol, or SSL. It's a way of securing communication between a web server and client. But it's pretty old and insecure, so it's been deprecated in favor of TLS. You may still see it today being used over the TLS protocol like SSL/TLS. The two protocols are often used interchangeably. In fact, SSL version 3.0, was essentially TLS version 1.0. But TLS's new features and updates have made it more secure than SSL.
+Play video starting at :2:39 and follow transcript2:39
+So if you're managing an organization's website on a server, how do you enable TLS on the server so that the site can be using HTTPS? Well, you need to get a digital certificate of trust from an entity called a certificate authority. The certificate authority grants a certificate to your website saying that it trusts that you control the web server. And verifies that you are who you say you are.
+Play video starting at :3:4 and follow transcript3:04
+Once it does that, you can install the certificate on your web server. That way, when users visit your site, they'll see the HTTPS in the URL instead of just HTTP.
+Play video starting at :3:16 and follow transcript3:16
+You'll learn more about certificates and certificate authorities in an upcoming course.
+Play video starting at :3:21 and follow transcript3:21
+For now, think of certificates as a way to verify that something is trustworthy. Security is an integral part of IT, and it's not just the responsibility of security engineers. Everyone should be thinking about security. And all layers of your infrastructure should have a layer of security built upon them. There are lots of other security software that you can add to your IT infrastructure, which we'll dive into in the last course. For now, it's a good idea to know the basics of keeping a web server secure with HTTPS.
+
